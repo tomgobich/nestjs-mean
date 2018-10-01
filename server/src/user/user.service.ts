@@ -54,7 +54,6 @@ export class UserService extends BaseService<User> {
     }
 
     const isMatch = await compare(password, user.password);
-
     if (!isMatch) {
       throw new HttpException('Invalid credentials', HttpStatus.BAD_REQUEST);
     }
